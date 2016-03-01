@@ -1,0 +1,13 @@
+@import models.Recipe
+
+@(recipes: Seq[Recipe])
+
+@layouts.application("Recipes") {
+  <h1>Recipes</h1>
+
+  <ul>
+  @for(recipe <- recipes) {
+    <li><a href="@{recipe.url}">@{recipe.name}</a></li>
+  }
+  </ul>
+}
